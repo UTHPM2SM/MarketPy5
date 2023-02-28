@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#White" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="MarketPy5.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Frame CornerRadius="10" Padding="-5" Margin="20,20,20,20" BackgroundColor="#00BFA5" >
+        <StackLayout>
+            <Button x:Name="profile1" Clicked="profile1_Clicked" ImageSource="profile2.png" CornerRadius="100" HorizontalOptions="Center"  WidthRequest="100" BackgroundColor="Transparent" HeightRequest="100" VerticalOptions="CenterAndExpand"/>
+            <forms:AnimationView
+    x:Name="anim1"
+    IsVisible="false"
+    Animation="anim.json"
+    RepeatMode="Infinite"
+    AutoPlay="True"
+    VerticalOptions="CenterAndExpand"
+    HorizontalOptions="CenterAndExpand" />
+
+            <Grid x:Name="gridMenu" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" Padding="-25">
+                <Image x:Name="backWallpaper" Source="background1.jpg" Aspect="AspectFill" />
+                <Label x:Name="lblHello" IsVisible="false" Text="Bienvenido Usuario" FontAttributes="Bold" FontSize="25"  TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                <StackLayout x:Name="logControlsPanel" IsVisible="false" Margin="50,50,50,50" HeightRequest="400" BackgroundColor="Transparent" Padding="0">
+
+                    <Image Source="profile2.png" HeightRequest="70" Margin="0,150,0,0" HorizontalOptions="Center"/>
+
+                    <Entry x:Name="Correo" FontFamily="" Placeholder="Correo" PlaceholderColor="White" Margin="5,0,5,0" TextColor="White" Text="{Binding LoginEmailText, Mode=TwoWay}" FontAttributes="Bold"/>
+                    <Entry x:Name="Contrasenia" IsPassword="True" Placeholder="Contraseña" PlaceholderColor="White" Margin="5,0,5,0" TextColor="White" Text="{Binding LoginPasswordText, Mode=TwoWay}" FontAttributes="Bold"/>
+
+
+                    <Button Text="Iniciar Sesión" TextColor="White" BackgroundColor="Black" CornerRadius="10" Margin="0,30,0,0" Command="{Binding LoginCommand}" FontAttributes="Bold" />
+                    <Label Text="" HorizontalOptions="CenterAndExpand"></Label>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="40"/>
+
+                    <StackLayout Grid.Row="9" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="¿Olvidó contraseña?  Click para recuperar" FontSize="15" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="ForgotPassword" TextColor="White"/>
+                    </StackLayout>
+
+                    <Label/>
+
+                    <StackLayout Grid.Row="9" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Da click para crear una cuenta" FontSize="15" x:Name="GoToRegister" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </Frame>
+
+</ContentPage>

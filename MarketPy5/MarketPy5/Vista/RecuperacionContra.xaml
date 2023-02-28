@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.RecuperacionContra"
+             NavigationPage.HasNavigationBar="False">
+
+    <Frame CornerRadius="10" Padding="-5" Margin="20,20,20,20" BackgroundColor="#00BFA5" >
+
+
+        <StackLayout>
+            <Label Grid.Row="3"  Text="Recuperación" Margin="0,80,0,40" FontSize="44" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Grid.Row="4" Margin="0,15,0,60" FontSize="15" Text="Ingresa el correo electrónico de tu cuenta" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
+            <Entry Grid.Row="5" Placeholder="Correo" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" Margin="20,0,20,20"  Keyboard="Email" Text="{Binding PasswordEmailText, Mode=TwoWay}"></Entry>
+            <Button Grid.Row="7" Text="Enviar Correo" FontAttributes="Bold" BackgroundColor="Black" Margin="20,0,20,-100" TextColor="White" CornerRadius="10" Command="{Binding RecoveryCommand}"></Button>
+
+            <Label Grid.Row="9" Text="¿Recordaste tu contraseña?" FontSize="15" FontAttributes="Bold" TextColor="White" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" x:Name="GoToLogin" />
+        </StackLayout>
+        
+    </Frame>
+</ContentPage>
