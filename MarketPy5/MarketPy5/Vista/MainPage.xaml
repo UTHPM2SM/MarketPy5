@@ -7,7 +7,7 @@
 
     <Frame CornerRadius="10" Padding="-5" Margin="20,20,20,20" BackgroundColor="#00BFA5" >
         <StackLayout>
-            <Button x:Name="profile1" Clicked="profile1_Clicked" ImageSource="profile2.png" CornerRadius="100" HorizontalOptions="Center"  WidthRequest="100" BackgroundColor="Transparent" HeightRequest="100" VerticalOptions="CenterAndExpand"/>
+            <Button x:Name="profile1" Clicked="profile1_Clicked" ImageSource="profile5.png" CornerRadius="100" HorizontalOptions="Center"  WidthRequest="200" BackgroundColor="Transparent" HeightRequest="200" VerticalOptions="CenterAndExpand"/>
             <forms:AnimationView
     x:Name="anim1"
     IsVisible="false"

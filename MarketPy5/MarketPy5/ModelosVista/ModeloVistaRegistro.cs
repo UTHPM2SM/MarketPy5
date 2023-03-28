@@ -1,10 +1,12 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Firebase.Auth;
+using GalaSoft.MvvmLight.Command;
 using MarketPy5.Controlador;
 using MvvmHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MarketPy5.ModelosVista
 {
@@ -15,10 +17,19 @@ namespace MarketPy5.ModelosVista
         private string phone;
         private string password;
 
+
+        //Verificación de correo
+
+        private string WebApiKey = "AIzaSyA33uUzHinDOOitFq-WNed3dlctMJJmjyk";
         //==============================================================================
 
         //==============================================================================
-        
+
+
+        //==============================================================================
+
+        //==============================================================================
+
         public string RegisterNameText
         {
             get { return this.name; }
@@ -48,14 +59,14 @@ namespace MarketPy5.ModelosVista
         
         public ICommand RegisterCommand
         {
+
             get
             {
                 return new RelayCommand(Register);
             }
         }
-       
 
-        
+
         private async void Register()
         {
             UserControlador obj = new UserControlador();

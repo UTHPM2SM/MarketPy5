@@ -6,20 +6,20 @@
 
     <Frame CornerRadius="10" Padding="-5" Margin="20,20,20,20" BackgroundColor="#00BFA5" >
         <StackLayout>
-            <Label  Text="Registro" Margin="0,95,0,0" FontSize="40" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
-            <Label Margin="0,25,0,25" FontSize="15" Text="Registra tu cuenta" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
+            <Label  Text="         Registro         " Margin="0,95,0,0" FontSize="40" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" BackgroundColor="Black"></Label>
+            <Label Margin="0,25,0,25" FontSize="15" Text="" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
 
-            <Entry Placeholder="Nombre"  TextColor="White" Margin="20,0,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding RegisterNameText, Mode=TwoWay}"></Entry>
+            <Entry Placeholder="Escriba su nombre"  FontAttributes="Bold" TextColor="White" Margin="20,-30,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Text="{Binding RegisterNameText, Mode=TwoWay}"></Entry>
 
-            <Entry Placeholder="Correo" FontAttributes="Bold" TextColor="White" Margin="20,0,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand"  Keyboard="Email" Text="{Binding RegisterEmailText, Mode=TwoWay}"></Entry>
+            <Entry Placeholder="Escriba su correo" FontAttributes="Bold" TextColor="White" Margin="20,0,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand"  Keyboard="Email" Text="{Binding RegisterEmailText, Mode=TwoWay}"></Entry>
 
-            <Entry Placeholder="Telefono" FontAttributes="Bold" TextColor="White" Margin="20,0,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Text="{Binding RegisterPhoneText, Mode=TwoWay}"></Entry>
+            <Entry Placeholder=" Escriba su telefono" FontAttributes="Bold" TextColor="White" Margin="20,0,20,20" PlaceholderColor="White" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Text="{Binding RegisterPhoneText, Mode=TwoWay}"></Entry>
 
-            <Entry Placeholder="Contraseña" FontAttributes="Bold" TextColor="White" Margin="20,0,20,10" PlaceholderColor="White" IsPassword="True" HorizontalOptions="FillAndExpand" Text="{Binding RegisterPasswordText, Mode=TwoWay}"></Entry>
+            <Entry Placeholder="Escriba su contraseña" FontAttributes="Bold" TextColor="White" Margin="20,0,20,10" PlaceholderColor="White" IsPassword="True" HorizontalOptions="FillAndExpand" Text="{Binding RegisterPasswordText, Mode=TwoWay}"></Entry>
 
             <Button Margin="20,30,20,30" Text="Registrarme" TextColor ="White" BackgroundColor="Black" FontAttributes="Bold" CornerRadius="10" Command="{Binding RegisterCommand}"></Button>
 
-            <Label TextColor="White" FontSize="15" Text="¿Ya tienes cuenta? Inicia sesión aquí" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="GoToLogin" />
+            <Label TextColor="White" FontSize="15" Text="¿Cuenta ya creada? Regresa al login aquí" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="GoToLogin" />
         </StackLayout>
     </Frame>
 </ContentPage>

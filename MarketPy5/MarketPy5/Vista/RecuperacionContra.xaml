@@ -8,12 +8,14 @@
 
 
         <StackLayout>
-            <Label Grid.Row="3"  Text="Recuperación" Margin="0,80,0,40" FontSize="44" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
-            <Label Grid.Row="4" Margin="0,15,0,60" FontSize="15" Text="Ingresa el correo electrónico de tu cuenta" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
-            <Entry Grid.Row="5" Placeholder="Correo" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" Margin="20,0,20,20"  Keyboard="Email" Text="{Binding PasswordEmailText, Mode=TwoWay}"></Entry>
+            <Label Grid.Row="3"  Text="   Recuperación   "  BackgroundColor="Black" Margin="0,80,0,40" FontSize="44" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Grid.Row="4" Margin="0,15,0,-20" FontSize="17" Text="Necesitamos tu correo registrado para" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
+            <Label Grid.Row="5" Margin="0,15,0,40" FontSize="17" Text="enviarte tu contraseña" FontAttributes="Bold" TextColor="White"  HorizontalOptions="CenterAndExpand"></Label>
+            <Entry Grid.Row="6" Placeholder="Correo" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" Margin="20,0,20,20"  Keyboard="Email" Text="{Binding PasswordEmailText, Mode=TwoWay}"></Entry>
             <Button Grid.Row="7" Text="Enviar Correo" FontAttributes="Bold" BackgroundColor="Black" Margin="20,0,20,-100" TextColor="White" CornerRadius="10" Command="{Binding RecoveryCommand}"></Button>
 
-            <Label Grid.Row="9" Text="¿Recordaste tu contraseña?" FontSize="15" FontAttributes="Bold" TextColor="White" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" x:Name="GoToLogin" />
+            <Label Grid.Row="8" Text="¿Te acuerdas de tu contraseña?" FontSize="15" FontAttributes="Bold" TextColor="White" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" x:Name="GoToLogin" />
+            
         </StackLayout>
         
     </Frame>

@@ -13,6 +13,7 @@ namespace MarketPy5.ModelosVista
 
        
         private string email;
+        
 
         private string WebApiKey = "AIzaSyA33uUzHinDOOitFq-WNed3dlctMJJmjyk";
         //==============================================================================
@@ -50,7 +51,7 @@ namespace MarketPy5.ModelosVista
                 try
                 {
                     await authProvider.SendPasswordResetEmailAsync(email);
-                    await Application.Current.MainPage.DisplayAlert("Enviado", "Se le ha enviado un correo para restablecer su contraseña. Si no lo encuentra, revise la carpeta de Spam", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Enviado", "Usuario, se ha enviado un correo para restablecer su contraseña", "OK");
                     await Application.Current.MainPage.Navigation.PopAsync();
                 }
                 catch (Exception e)
