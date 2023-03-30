@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.VistaRepartidor.PaginaTareas">
+    <ContentPage.Content>
+        <ContentView Padding="15,15" BackgroundColor="{StaticResource colorPrimary}">
+            <ScrollView>
+                <Frame CornerRadius="15">
+                    <StackLayout>
+                        <Label Text="Detalles de compra" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="{StaticResource colorBlack}" Margin="0,10,0,10"></Label>
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="0000/00/00" x:Name="DateTimeText" HorizontalOptions="EndAndExpand"></Label>
+                                <Label Text="State" x:Name="SaleState" HorizontalOptions="EndAndExpand"></Label>
+                                <Label Text="Cliente: "></Label>
+                                <Label Text="NoClientNameFound" x:Name="ClientName" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+
+                                <Label Text="Telefono: " Margin="0,10,0,0"></Label>
+                                <Label Text="NoClientPhoneFound" x:Name="ClientPhone" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+
+                                <Label Text="Ubicación de entrega: " Margin="0,10,0,0"></Label>
+                                <Label Text="NoClientLocationFound" x:Name="ClientLocation" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                <StackLayout Orientation="Horizontal" Spacing="1">
+                                    <Label Text="Latitude" x:Name="Latitude" TextColor="{StaticResource colorBlack}" FontSize="8" Margin="0,-10,0,0"></Label>
+                                    <Label Text="," TextColor="{StaticResource colorBlack}" FontSize="8" Margin="0,-10,0,0"></Label>
+                                    <Label Text="Longitude" x:Name="Longitude" TextColor="{StaticResource colorBlack}" FontSize="8" Margin="0,-10,0,0"></Label>
+                                </StackLayout>
+
+                                <Label Text="Descripción adicional: " Margin="0,10,0,0"></Label>
+                                <Label Text="Detalle de entrega" x:Name="SendDetails" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+
+                                <Label Text="Forma de pago: " Margin="0,10,0,0"></Label>
+                                <Label Text="PayWay" x:Name="PayWay" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                <Frame HeightRequest="1" Padding="0,0"></Frame>
+
+                                <Label Text="Lista de productos" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorBlack}" FontSize="16"></Label>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <ListView Grid.Row="3" x:Name="ProductListView" ItemsSource="{Binding Shopping}" HasUnevenRows="True" IsRefreshing="False" IsPullToRefreshEnabled="True" HeightRequest="560">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <SwipeView>
+                                                        <StackLayout Margin="0, 10">
+                                                            <Frame BorderColor="{StaticResource colorShadows}" CornerRadius="15">
+                                                                <StackLayout  Orientation="Horizontal" Padding="0" Spacing="15">
+                                                                    <Frame Padding="0" HeightRequest="100" WidthRequest="100" BackgroundColor="#ffffff" CornerRadius="100" BorderColor="{StaticResource colorAccent}" IsClippedToBounds="True">
+                                                                        <Frame.Content>
+                                                                            <Image Source="{Binding Image}" Aspect="Fill"/>
+                                                                        </Frame.Content>
+                                                                    </Frame>
+
+                                                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                                        <Label Text="{Binding ProductName}" FontSize="12" FontAttributes="Bold"/>
+                                                                        <StackLayout Orientation="Horizontal">
+                                                                            <Label Text="Total:" FontSize="11"/>
+                                                                            <Label Text="{Binding TotalShop}" FontSize="12"/>
+                                                                            <Label Text="Lps" FontSize="11"/>
+                                                                        </StackLayout>
+                                                                        <StackLayout Orientation="Horizontal">
+                                                                            <Label Text="{Binding Quantity}" FontSize="12"/>
+                                                                            <Label Text="Lbs/U" FontSize="11"/>
+                                                                        </StackLayout>
+                                                                    </StackLayout>
+                                                                </StackLayout>
+                                                            </Frame>
+                                                        </StackLayout>
+                                                    </SwipeView>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Grid>
+                                <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                <Label Text="Total a cancelar: " Margin="0,10,0,0"></Label>
+                                <Label Text="TotalSell" x:Name="TotalToPay" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+
+                                <Frame HeightRequest="1" Padding="0,0"></Frame>
+                            </StackLayout>
+                        </Frame>
+                        <Frame>
+                            <StackLayout>
+                                <Button Text="Finalizar Entrega" BackgroundColor="{StaticResource colorPrimaryDark}" TextColor="{StaticResource colorFont}" x:Name="BackButton" Clicked="BackButton_Clicked" CornerRadius="5" FontSize="12"></Button>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

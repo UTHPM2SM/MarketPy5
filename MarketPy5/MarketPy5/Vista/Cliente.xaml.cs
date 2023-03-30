@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace MarketPy5.Vista
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Cliente : ContentPage
-	{
-		public Cliente ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Cliente : TabbedPage
+    {
+        public Cliente()
+        {
+            InitializeComponent();
+        }
+    }
 }

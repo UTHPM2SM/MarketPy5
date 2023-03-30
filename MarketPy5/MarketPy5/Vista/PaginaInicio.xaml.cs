@@ -1,8 +1,6 @@
 ﻿using Firebase.Auth;
-using MarketPy5.Controlador;
-using MarketPy5.Modelo;
 using MarketPy5.ModelosVista;
-using MarketPy5.Vista.VistaRepartidor;
+using MarketPy5.Vista.VistaClientes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,26 +13,49 @@ using Xamarin.Forms.Xaml;
 
 namespace MarketPy5.Vista
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Repartidor : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PaginaInicio : ContentPage
+    {
         private string WebApiKey = "AIzaSyA33uUzHinDOOitFq-WNed3dlctMJJmjyk";
-        public Repartidor()
+
+        [Obsolete]
+        public PaginaInicio()
         {
             InitializeComponent();
-            BindingContext = new ModeloVistaRepartidor();
-
-            HistoryListView.RefreshCommand = new Command(() =>
-            {
-                OnAppearing();
-            });
+            BindingContext = new ModeloVistaInicio();
 
             GetProfileInformationAndRefreshToken();
+            CloseModal();
 
             MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
             ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
 
-            PopUpModal.IsVisible = false;
+            MeatCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Carnes")));
+            VegetablesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Verduras")));
+            DrinksCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebidas")));
+            BabiesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebes")));
+
+            ToHistoryPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToHistoryPage()));
+            ToInfoPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToInfoPage()));
+            ToShoppingListButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToShoppingList()));
+        }
+
+        private void ToShoppingList()
+        {
+            Navigation.PushAsync(new PaginaListaCompra());
+            CloseModal();
+        }
+
+        private void ToInfoPage()
+        {
+            Navigation.PushAsync(new PaginaInformacion());
+            CloseModal();
+        }
+
+        private void ToHistoryPage()
+        {
+            Navigation.PushAsync(new PaginaHistoria());
+            CloseModal();
         }
 
         public async void GetProfileInformationAndRefreshToken()
@@ -52,7 +73,6 @@ namespace MarketPy5.Vista
                 UserEmail.Text = Preferences.Get("Email", "NoEmailFounded");
                 UserPhone.Text = Preferences.Get("Phone", "00000000");
                 UserImage.Source = Preferences.Get("Image", "https://i.ibb.co/vhh0Gkj/users.png");
-
             }
             catch (Exception ex)
             {
@@ -71,18 +91,16 @@ namespace MarketPy5.Vista
             PopUpModal.IsVisible = false;
         }
 
-        protected override async void OnAppearing()
+        [Obsolete]
+        private void ToProductsPanel(string category)
         {
-            var historyList = await VentasControlador.GetPendingSales();
-            HistoryListView.ItemsSource = null;
-            HistoryListView.ItemsSource = historyList;
-            HistoryListView.IsRefreshing = false;
+            Navigation.PushAsync(new ProductosCategorizados(category));
         }
 
-        private void HistoryListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void ProfileButton_Clicked(object sender, EventArgs e)
         {
-            var sale = e.Item as Ventas;
-            Navigation.PushAsync(new PaginaTareas(sale));
+            Navigation.PushAsync(new EditarPerfil());
+            CloseModal();
         }
     }
 }

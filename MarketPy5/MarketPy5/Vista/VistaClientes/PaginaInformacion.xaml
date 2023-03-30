@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.VistaClientes.PaginaInformacion">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="0" Padding="0, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ScrollView Grid.Row="0" VerticalOptions="Center" HeightRequest="800">
+                    <StackLayout>
+                        <Frame Margin="0, -150, 0, 0" HeightRequest="500" Padding="0, 0"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="150">
+                            <StackLayout>
+                                <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="150" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.1"></Image>
+                                <Label Text="Supermercado" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorFont}"></Label>
+                                <Label Text="El Económico" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource colorFont}" HorizontalOptions="CenterAndExpand" Margin="0, 0, 0, 40"></Label>
+                            </StackLayout>
+                        </Frame>
+
+                        <StackLayout Margin="0,20,0,0" Padding="15,15" Spacing="20">
+                            <Label Text="Sobre Nosotros" HorizontalOptions="CenterAndExpand" FontSize="28" TextColor="{StaticResource colorBlack}"></Label>
+                            <Frame HeightRequest="300" Padding="10, 10" IsClippedToBounds="True" CornerRadius="15">
+                                <ScrollView>
+                                    <StackLayout>
+                                        <Label Text="Historia" TextColor="{StaticResource colorShadows}" FontSize="18"></Label>
+                                        <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                        <Label Text="Debido a la pandemia en el año 2020 nos vimos obligados a innovar en el área del comercio de comercio electrónico con nuestra empresa SUPERMERCADO EL ECONOMICO, ya que las personas estuvieron en cuarentena y se necesitaban que las compras llegaran a casa para evitar la propagación del virus, así que una idea y haciendo uso de la tecnología nos pusimos manos a la obra y llevamos 2 años en le marcado ofreciendo una variedad y gran cantidad de productos a nuestros cliente con entregas rápidas y un ágil servicio al cliente."></Label>
+                                    </StackLayout>
+                                </ScrollView>
+                            </Frame>
+
+                            <Frame HeightRequest="300" Padding="10, 10" IsClippedToBounds="True" CornerRadius="15">
+                                <StackLayout>
+                                    <Label Text="Misión" TextColor="{StaticResource colorShadows}" FontSize="18"></Label>
+                                    <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                    <Label Text="Ser un supermercado moderno y de calidad, donde el cliente elige en libertad y donde buscamos la satisfacción continua de nuestros clientes a través de una atención y servicio que excede sus expectativas y una adaptación continua a sus necesidades."></Label>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame HeightRequest="300" Padding="10, 10" IsClippedToBounds="True" CornerRadius="15">
+                                <StackLayout>
+                                    <Label Text="Visión" TextColor="{StaticResource colorShadows}" FontSize="18"></Label>
+                                    <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                    <Label Text="Ser la tienda preferida por los consumidores para comprar y usar la tecnología como baluarte en nuestra empresa para facilitar la compra de sus productos en nuestra tienda."></Label>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame Padding="10, 10" IsClippedToBounds="True" CornerRadius="15">
+                                <StackLayout>
+                                    <Button Text="Reportar Error" BackgroundColor="{StaticResource colorCancel}" TextColor="{StaticResource colorFont}" FontAttributes="Bold" x:Name="SendErrorMail" Clicked="SendErrorMail_Clicked" CornerRadius="15"></Button>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

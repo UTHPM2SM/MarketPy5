@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.PaginaInicio"
+                NavigationPage.HasNavigationBar="False">
+    
+    <AbsoluteLayout  AbsoluteLayout.LayoutFlags="PositionProportional">
+        <StackLayout Padding="0" Spacing="0">
+            <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
+                <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
+            </Frame>
+            <ScrollView>
+                <Grid RowSpacing="0" Padding="0, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ScrollView Grid.Row="0" VerticalOptions="Center" HeightRequest="800">
+                        <StackLayout>
+                            <Frame Margin="0, -150, 0, 0" HeightRequest="500" Padding="0, 0"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="150">
+                                <StackLayout>
+                                    <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="150" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.1"></Image>
+                                    <Label Text="Supermercado" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="El Económico" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource colorFont}" HorizontalOptions="CenterAndExpand" Margin="0, 0, 0, 40"></Label>
+                                </StackLayout>
+                            </Frame>
+
+                            <StackLayout Margin="0,20,0,0" Padding="15,15" Spacing="20">
+                                <Label Text="Pasillos" HorizontalOptions="CenterAndExpand" FontSize="28" TextColor="{StaticResource colorBlack}"></Label>
+                                <Frame HeightRequest="1" Padding="0,0"></Frame>
+                                <Frame HeightRequest="300" Padding="0, 0" IsClippedToBounds="True"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="MeatCategory">
+                                    <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional">
+                                        <Image Source="https://i.ibb.co/txsWkk2/meat.jpg" Scale="1.5"></Image>
+                                        <Frame AbsoluteLayout.LayoutBounds="2, 1.5, 280, 200" AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="100">
+                                            <Label Text="Carnes" FontSize="25" TextColor="#000" VerticalOptions="Center" Margin="0,0,0,40"></Label>
+                                        </Frame>
+                                    </AbsoluteLayout>
+                                </Frame>
+
+                                <Frame HeightRequest="300" Padding="0, 0" IsClippedToBounds="True"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="VegetablesCategory">
+                                    <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional">
+                                        <Image Source="https://i.ibb.co/pjrbFvN/vegtables.jpg" Scale="1.3"></Image>
+                                        <Frame AbsoluteLayout.LayoutBounds="2, 1.5, 280, 200" AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="100">
+                                            <Label Text="Vegetales" FontSize="25" TextColor="{StaticResource colorBlack}" VerticalOptions="Center" Margin="0,0,0,40"></Label>
+                                        </Frame>
+                                    </AbsoluteLayout>
+                                </Frame>
+
+                                <Frame HeightRequest="300" Padding="0, 0" IsClippedToBounds="True"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="DrinksCategory">
+                                    <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional">
+                                        <Image Source="https://i.ibb.co/qp3ssKN/drinks.jpg" Scale="1.4"></Image>
+                                        <Frame AbsoluteLayout.LayoutBounds="2, 1.5, 280, 200" AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="100">
+                                            <Label Text="Bebidas" FontSize="25" TextColor="{StaticResource colorBlack}" VerticalOptions="Center" Margin="0,0,0,40"></Label>
+                                        </Frame>
+                                    </AbsoluteLayout>
+                                </Frame>
+
+                                <Frame HeightRequest="300" Padding="0, 0" IsClippedToBounds="True"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="BabiesCategory">
+                                    <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional">
+                                        <Image Source="https://i.ibb.co/WgFDLPM/babies.jpg" Scale="1.5"></Image>
+                                        <Frame AbsoluteLayout.LayoutBounds="2, 1.5, 280, 200" AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="100">
+                                            <Label Text="Bebes" FontSize="25" TextColor="{StaticResource colorBlack}" VerticalOptions="Center" Margin="0,0,0,40"></Label>
+                                        </Frame>
+                                    </AbsoluteLayout>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+        <Frame AbsoluteLayout.LayoutBounds="0.5, 0.5, 350, 600"  AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="15" x:Name="PopUpModal">
+            <ScrollView>
+                <AbsoluteLayout>
+                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
+                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="UserImage" Scale="1.5"></Image>
+                    </Frame>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
+                        <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand" FontSize="10"></Label>
+                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand" FontSize="10"></Label>
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.7, 180,50" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Horizontal" Spacing="15">
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/rbgYcbW/info.png" Scale="3.9" x:Name="ToInfoPageButton"></Image>
+                        </Frame>
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/jM877qK/shopping-car.png" Scale="3.9" x:Name="ToShoppingListButton"></Image>
+                        </Frame>
+                        <Frame HeightRequest="15" WidthRequest="15" BackgroundColor="AliceBlue">
+                            <Image Source="https://i.ibb.co/WGTMFP4/history.png" Scale="3.9" x:Name="ToHistoryPageButton"></Image>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.98, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Button Text="Actualizar Perfil" BackgroundColor="#25B90A" CornerRadius="20" HorizontalOptions="CenterAndExpand" x:Name="ProfileButton" Clicked="ProfileButton_Clicked" FontSize="14"></Button>
+                        <Button Text="Salir" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" HorizontalOptions="CenterAndExpand" FontSize="14"></Button>
+                    </StackLayout>
+                </AbsoluteLayout>
+            </ScrollView>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

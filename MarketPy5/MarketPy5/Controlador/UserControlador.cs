@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
 using Newtonsoft.Json;
 using System.IO;
 using Xamarin.Essentials;
 using Firebase.Auth;
 using MarketPy5.Vista;
+using MarketPy5.Modelo;
 
 namespace MarketPy5.Controlador
 {
@@ -131,7 +131,7 @@ namespace MarketPy5.Controlador
 
                 if (user.Level == "C")
                 {
-                    await Application.Current.MainPage.Navigation.PushAsync(new Cliente());
+                    await Application.Current.MainPage.Navigation.PushAsync(new PaginaInicio());
                 }
                 else if (user.Level == "D")
                 {
@@ -148,7 +148,7 @@ namespace MarketPy5.Controlador
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", "Correo o contraseña incorrectas.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", ex.Source, "OK");
             }
         }
 

@@ -1,18 +1,18 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using MarketPy5.Controlador;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using MarketPy5.Controlador;
 
 namespace MarketPy5.ModelosVista
 {
-    class ModeloVistaInicio
+     class ModeloVistaAdministrador
     {
         #region Attributes
         private string userName;
-        private string WebApiKey = "AIzaSyA33uUzHinDOOitFq-WNed3dlctMJJmjyk";
-       #endregion
+
+        #endregion
         //==============================================================================
 
         //==============================================================================

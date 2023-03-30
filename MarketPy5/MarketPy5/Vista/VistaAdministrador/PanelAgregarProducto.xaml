@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.VistaAdministrador.PanelAgregarProducto">
+    <AbsoluteLayout>
+        <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0.02,200,200" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="AddProductImage">
+            <Image Source="https://i.ibb.co/tzqnRTG/camera.png" x:Name="ProductImage"></Image>
+        </Frame>
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.75,300,500" AbsoluteLayout.LayoutFlags="PositionProportional" Spacing="25">
+            <Entry Placeholder="Nombre del producto" TextColor="#000" x:Name="NameProductText"></Entry>
+            <Entry Placeholder="Precio" Keyboard="Numeric" TextColor="#000" x:Name="PriceProductText"></Entry>
+            <Entry Placeholder="Descripción" TextColor="#000" x:Name="DescriptionProductText"></Entry>
+            <Picker Title="Categoria" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
+                <Picker.Items>
+                    <x:String>Bebidas</x:String>
+                    <x:String>Carnes</x:String>
+                    <x:String>Bebes</x:String>
+                    <x:String>Verduras</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.9, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Agregar Producto" CornerRadius="15" BackgroundColor="{StaticResource colorPrimaryDark}" TextColor="{StaticResource colorFont}" Clicked="Button_Clicked"></Button>
+    </AbsoluteLayout>
+    </ContentPage>

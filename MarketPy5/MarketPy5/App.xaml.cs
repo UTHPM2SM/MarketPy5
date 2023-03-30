@@ -15,7 +15,7 @@ namespace MarketPy5
 
             if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")) && Preferences.Get("Level", "") == "C")
             {
-                MainPage = new NavigationPage(new Cliente());
+                MainPage = new NavigationPage(new PaginaInicio());
             }
             else if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", "")) && Preferences.Get("Level", "") == "D")
             {

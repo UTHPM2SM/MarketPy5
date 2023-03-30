@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarketPy5.Controlador
+namespace MarketPy5.Modelo
 {
     class Usuarios
     {

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarketPy5.Vista.VistaClientes.PaginaHistoria">
+    <AbsoluteLayout>
+        <StackLayout Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Historial de compras" TextColor="{StaticResource colorBlack}" FontSize="18" HorizontalOptions="CenterAndExpand"></Label>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListView Grid.Row="3" x:Name="HistoryListView" ItemsSource="{Binding Sales}" HasUnevenRows="True" IsRefreshing="True" IsPullToRefreshEnabled="True" HeightRequest="730" ItemTapped="HistoryListView_ItemTapped">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <SwipeView>
+                                            <StackLayout Margin="0, 10">
+                                                <Frame BorderColor="{StaticResource colorPrimaryDark}" CornerRadius="5">
+                                                    <StackLayout  Orientation="Vertical" Padding="0" Spacing="15">
+                                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                                            <Frame BackgroundColor="{StaticResource colorPrimary}" Padding="5,5" CornerRadius="15" Margin="0,0,0,20">
+                                                                <Label Text="Notificación de compra" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorFont}" FontAttributes="Bold"></Label>
+                                                            </Frame>
+                                                            <Label Text="{Binding Id}" FontSize="10" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorBlack}"></Label>
+                                                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                                                <Label Text="Cliente:" FontSize="12"></Label>
+                                                                <Label Text="{Binding ClientName}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                                                <Label Text="Fecha de compra:" FontSize="12"></Label>
+                                                                <Label Text="{Binding Date}" FontSize="12" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                                                <Label Text="Telefono referencia: " FontSize="12"></Label>
+                                                                <Label Text="{Binding ClientPhone}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                                                <Label Text="Total cancelar: " FontSize="12"></Label>
+                                                                <Label Text="{Binding TotalToPay}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                            </StackLayout>
+                                                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                                                <Label Text="Dirección referencia: " FontSize="12"></Label>
+                                                                <Label Text="{Binding Detail}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
+                                                            </StackLayout>
+                                                            <Label Text="{Binding State}" TextColor="{StaticResource colorPrimaryDark}"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="End" Orientation="Horizontal">
+                                                            <Label Text="Supermercado El Economico" FontSize="8" VerticalOptions="Center"></Label>
+                                                            <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="40" HorizontalOptions="EndAndExpand" Scale="0.5"></Image>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </SwipeView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "432883860641",
+    "firebase_url": "https://proyectosupermercado-728d4-default-rtdb.firebaseio.com",
+    "project_id": "proyectosupermercado-728d4",
+    "storage_bucket": "proyectosupermercado-728d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432883860641:android:d1e1efb23806498a835ce0",
+        "android_client_info": {
+          "package_name": "com.companyname.marketpy5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432883860641-5nq69hjntq8voj0u04m6p6cq1fbrthp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9gUJBeIkMNhqMhqm4yh_Av2FaZAq8N6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432883860641-5nq69hjntq8voj0u04m6p6cq1fbrthp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432883860641:android:34edf232fe33fb36835ce0",
+        "android_client_info": {
+          "package_name": "finalproject.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432883860641-5nq69hjntq8voj0u04m6p6cq1fbrthp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9gUJBeIkMNhqMhqm4yh_Av2FaZAq8N6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432883860641-5nq69hjntq8voj0u04m6p6cq1fbrthp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
