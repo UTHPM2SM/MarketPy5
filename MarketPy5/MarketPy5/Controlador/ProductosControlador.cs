@@ -72,7 +72,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<List<Productos>> GetAllByCategory(string category)
         {
-            return (await firebaseClient.Child(nameof(Productos)).OnceAsync<Productos>()).Select(item => new Productos
+            return (await firebaseClient.Child("Products").OnceAsync<Productos>()).Select(item => new Productos
             {
                 Id = item.Key,
                 Name = item.Object.Name,

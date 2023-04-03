@@ -103,7 +103,7 @@ namespace MarketPy5.Controlador
         //Actualizar usuario
         public static async Task<bool> UpdateUser(Usuarios user)
         {
-            await firebase.Child(nameof(Usuarios) + "/" + user.Id).PutAsync(JsonConvert.SerializeObject(user));
+            await firebase.Child(("Users") + "/" + user.Id).PutAsync(JsonConvert.SerializeObject(user));
             return true;
         }
 

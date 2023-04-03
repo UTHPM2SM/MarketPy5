@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MarketPy5.Vista.VistaClientes.ProductosCategorizados">
     <AbsoluteLayout>
-        <StackLayout Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
+        <StackLayout Padding="0, 0" BackgroundColor="{StaticResource colorPrimary}">
             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Grid>
@@ -58,15 +58,15 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="31, 50, 350, 700" CornerRadius="15" x:Name="PopUpModal">
+        <Frame AbsoluteLayout.LayoutBounds="0,-10, 350, 700" CornerRadius="15" x:Name="PopUpModal">
             <ScrollView>
                 <ContentView>
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="15">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
                             <Image Source="https://i.ibb.co/dDnmXYB/close.png" HeightRequest="22" x:Name="ClosePopUpModal"></Image>
                             <Label x:Name="ProductDetailName" Text="NoProductNameFound" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="{StaticResource colorBlack}"></Label>
                         </StackLayout>
-                        <Frame Padding="0" HeightRequest="400" WidthRequest="400" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0,15,0,0" BackgroundColor="{StaticResource colorBackImage}">
+                        <Frame Padding="0" HeightRequest="200" WidthRequest="400" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0,15,0,0" BackgroundColor="{StaticResource colorBackImage}">
                             <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="ProductDetailImage"></Image>
                         </Frame>
                         <StackLayout>
@@ -93,8 +93,8 @@
                                 <Image Source="https://i.ibb.co/R3YVH2c/star-empty.png" WidthRequest="30"></Image>
                             </StackLayout>
                         </StackLayout>
-                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"></Label>
-                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20" Margin="0,50,0,0">
+                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,50,0,0"></Label>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30" Margin="0,50, 0, 70">
                             <Button Text="Agregar a carrito" x:Name="BuyButton" BackgroundColor="#25B90A" CornerRadius="5" FontSize="12" Clicked="BuyButton_Clicked"></Button>
                             <Image Source="https://i.ibb.co/NtJjv5z/like.png" Scale="3" WidthRequest="15" x:Name="LikeButton"></Image>
                         </StackLayout>

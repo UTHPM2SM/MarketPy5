@@ -42,7 +42,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<List<Ventas>> GetUserHistory(string email)
         {
-            return (await firebase.Child(nameof(Ventas)).OnceAsync<Ventas>()).Select(item => new Ventas
+            return (await firebase.Child("Sales").OnceAsync<Ventas>()).Select(item => new Ventas
             {
                 Id = item.Key,
                 ClientName = item.Object.ClientName,
@@ -64,7 +64,7 @@ namespace MarketPy5.Controlador
         public static async Task<List<Ventas>> GetPendingSales()
         {
             string aux = "Pendiente";
-            return (await firebase.Child(nameof(Ventas)).OnceAsync<Ventas>()).Select(item => new Ventas
+            return (await firebase.Child("Sales").OnceAsync<Ventas>()).Select(item => new Ventas
             {
                 Id = item.Key,
                 ClientName = item.Object.ClientName,
@@ -85,7 +85,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<bool> UpdateState(Ventas sale)
         {
-            await firebase.Child(nameof(Ventas) + "/" + sale.Id).PutAsync(JsonConvert.SerializeObject(sale));
+            await firebase.Child("Sales" + "/" + sale.Id).PutAsync(JsonConvert.SerializeObject(sale));
             return true;
         }
     }

@@ -322,7 +322,7 @@ namespace MarketPy5.Vista.VistaClientes
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Fallo de sistema", "No se pudo actualizar el producto.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Fallo de sistema", "No se pudo actualizar el cliente.", "OK");
             }
         }
     }
