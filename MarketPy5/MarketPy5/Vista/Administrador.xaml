@@ -27,7 +27,7 @@
 
 
 
-                    <Frame Grid.Row="1" HeightRequest="100" Padding="15,25,35,20"  Margin="10,20,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
+                    <Frame Grid.Row="1" HeightRequest="100" Padding="15,25,35,20"  Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -43,7 +43,7 @@
                         </Grid>
                     </Frame>
 
-                    <Frame Grid.Row="2" HeightRequest="100" Padding="15, 25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
+                    <Frame Grid.Row="2" HeightRequest="100" Padding="15,25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -52,14 +52,14 @@
                             <Image Source=""></Image>
                             <Frame Grid.Column="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label Text="Usuarios" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Usuarios" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
                                     <Label Text="Clientes y repartidores" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
                                 </StackLayout>
                             </Frame>
                         </Grid>
                     </Frame>
 
-                    <Frame Grid.Row="3" HeightRequest="100" Padding="15, 25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="HistoriaButton">
+                    <Frame Grid.Row="3" HeightRequest="100" Padding="15,25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="HistoriaButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -68,7 +68,7 @@
                             <Image Source=""></Image>
                             <Frame Grid.Column="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label Text="Ventas" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Ventas" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
                                     <Label Text="Historial de todas las ventas" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
                                 </StackLayout>
                             </Frame>
