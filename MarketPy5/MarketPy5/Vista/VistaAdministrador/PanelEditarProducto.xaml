@@ -4,23 +4,23 @@
              x:Class="MarketPy5.Vista.VistaAdministrador.PanelEditarProducto"    
              NavigationPage.HasNavigationBar="False">
     <AbsoluteLayout>
-        <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0.02,200,200" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="AddProductImage">
+        <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0.05,200,200" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="AddProductImage">
             <Image Source="https://i.ibb.co/tzqnRTG/camera.png" x:Name="ProductImage"></Image>
         </Frame>
-        <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.75,300,500" AbsoluteLayout.LayoutFlags="PositionProportional" Spacing="25">
-            <Entry Placeholder="Nombre del producto" TextColor="#000" x:Name="NameProductText"></Entry>
-            <Entry Placeholder="Precio" Keyboard="Numeric" TextColor="#000" x:Name="PriceProductText"></Entry>
-            <Entry Placeholder="Descripción" TextColor="#000" x:Name="DescriptionProductText"></Entry>
-            <Picker Title="Categoria" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5,1.1,300,500" AbsoluteLayout.LayoutFlags="PositionProportional" Spacing="25">
+            <Entry Placeholder="Nombre del producto" FontAttributes="Bold" PlaceholderColor="Black" TextColor="#000" x:Name="NameProductText"></Entry>
+            <Entry Placeholder="Precio" FontAttributes="Bold" PlaceholderColor="Black" Keyboard="Numeric" TextColor="#000" x:Name="PriceProductText"></Entry>
+            <Entry Placeholder="Descripción" FontAttributes="Bold" PlaceholderColor="Black" TextColor="#000" x:Name="DescriptionProductText"></Entry>
+            <Picker Title="Tipo de producto" FontAttributes="Bold" TitleColor="Black" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
                 <Picker.Items>
-                    <x:String>Bebidas</x:String>
-                    <x:String>Carnes</x:String>
+                    <x:String>Cerveza</x:String>
                     <x:String>Bebes</x:String>
-                    <x:String>Verduras</x:String>
+                    <x:String>Leches</x:String>
+                    <x:String>Carnes</x:String>
                 </Picker.Items>
             </Picker>
         </StackLayout>
-        <Button AbsoluteLayout.LayoutBounds="0.5, 0.8, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Actualizar" CornerRadius="15" BackgroundColor="#25B90A" TextColor="{StaticResource colorFont}" x:Name="UpdateButton" Clicked="UpdateButton_Clicked"></Button>
-        <Button AbsoluteLayout.LayoutBounds="0.5, 0.9, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Cancelar" CornerRadius="15" BackgroundColor="#EE2B08" TextColor="{StaticResource colorFont}" x:Name="CancelButton" Clicked="CancelButton_Clicked"></Button>
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.8, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Actualizar" CornerRadius="10" BackgroundColor="Black" TextColor="{StaticResource colorFont}" x:Name="UpdateButton" Clicked="UpdateButton_Clicked"></Button>
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.9, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Cancelar" CornerRadius="10" BackgroundColor="Black" TextColor="{StaticResource colorFont}" x:Name="CancelButton" Clicked="CancelButton_Clicked"></Button>
     </AbsoluteLayout>
 </ContentPage>

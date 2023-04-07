@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarketPy5.Vista.Administrador" 
-             NavigationPage.HasNavigationBar="False">
-    <AbsoluteLayout  AbsoluteLayout.LayoutFlags="PositionProportional">
+             x:Class="MarketPy5.Vista.Administrador">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Administrador"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+ 
+    <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional">
         <StackLayout Padding="0">
-            <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
-                <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
+            <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="Black">
+                <Image Source="eleccion.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="Start"></Image>
             </Frame>
             <ScrollView>
-                <Grid RowSpacing="20" Padding="15, 15">
+                <Grid RowSpacing="20" Padding="15, -20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -18,82 +25,75 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Frame Grid.Row="1" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
+
+
+                    <Frame Grid.Row="1" HeightRequest="100" Padding="15,25,35,20"  Margin="10,20,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Source="https://i.ibb.co/vhh0Gkj/users.png"></Image>
-                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                <StackLayout>
-                                    <Label Text="Usuarios" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
-                                    <Label Text="Lista de clientes" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
-                                </StackLayout>
-                            </Frame>
-                        </Grid>
-                    </Frame>
-                    <Frame Grid.Row="2" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="ProductButton">
-                        <Grid ColumnSpacing="20">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                <ColumnDefinition Width="2*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png"></Image>
-                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Image Source=""></Image>
+                            <Frame Grid.Column="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
                                     <Label Text="Productos" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
-                                    <Label Text="Gestion de productos" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Administra los productos" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
                                 </StackLayout>
                             </Frame>
                         </Grid>
                     </Frame>
-                    <Frame Grid.Row="3" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
+
+                    <Frame Grid.Row="2" HeightRequest="100" Padding="15, 25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="UserButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Source="https://i.ibb.co/Fn7G2QN/sells.png"></Image>
-                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Image Source=""></Image>
+                            <Frame Grid.Column="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label Text="Ventas" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
-                                    <Label Text="Aprobaciones de ventas" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Usuarios" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Clientes y repartidores" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
                                 </StackLayout>
                             </Frame>
                         </Grid>
                     </Frame>
-                    <Frame Grid.Row="4" HeightRequest="100" Padding="15, 15"  BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15">
+
+                    <Frame Grid.Row="3" HeightRequest="100" Padding="15, 25,35,20" Margin="10,10,10,20" BackgroundColor="{StaticResource colorPrimaryDark}" CornerRadius="15" x:Name="HistoriaButton">
                         <Grid ColumnSpacing="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Source="https://i.ibb.co/FBm5RHT/delivery.png"></Image>
-                            <Frame Grid.Column="1" BackgroundColor="{StaticResource colorPrimaryDark}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Image Source=""></Image>
+                            <Frame Grid.Column="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label Text="Repartidores" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
-                                    <Label Text="Administracion de repartidores" FontSize="12" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Ventas" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource colorFont}"></Label>
+                                    <Label Text="Historial de todas las ventas" TextColor="{StaticResource colorFont}" FontSize="12"></Label>
                                 </StackLayout>
                             </Frame>
                         </Grid>
                     </Frame>
+
                 </Grid>
             </ScrollView>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="31, 150, 350, 600" CornerRadius="15" x:Name="PopUpModal">
+
+
+
+        <Frame AbsoluteLayout.LayoutBounds="0, 0, 395, 780" CornerRadius="0" x:Name="PopUpModal">
             <ScrollView>
                 <AbsoluteLayout>
-                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
-                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Image Source="regresar.png" Scale="0.8" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
+                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="10" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.4,0.1,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="UserImage" Scale="1.5"></Image>
                     </Frame>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.4, 0.5, 200,150" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
                         <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
-                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
+                        <Label TextColor="White" x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
                     </StackLayout>
-                    <Button Text="Cerrar Sesión" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.5, 1, 100,60" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+                    <Button Text="Cerrar Sesión" Command="{Binding LogOutCommand}" BackgroundColor="Black" TextColor="White" FontAttributes="Bold" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.4, 0.6, 160,65" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
                 </AbsoluteLayout>
             </ScrollView>
         </Frame>

@@ -19,7 +19,7 @@
 
             <Grid x:Name="gridMenu" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" Padding="-25">
                 <Image x:Name="backWallpaper" Source="background1.jpg" Aspect="AspectFill" />
-                <Label x:Name="lblHello" IsVisible="false" Text="Bienvenido Usuario" FontAttributes="Bold" FontSize="25"  TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                <Label x:Name="lblHello" IsVisible="false" Text="Bienvenido" FontAttributes="Bold" FontSize="25"  TextColor="Black" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                 <StackLayout x:Name="logControlsPanel" IsVisible="false" Margin="50,50,50,50" HeightRequest="400" BackgroundColor="Transparent" Padding="0">
 
                     <Image Source="profile2.png" HeightRequest="70" Margin="0,150,0,0" HorizontalOptions="Center"/>

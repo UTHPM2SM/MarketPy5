@@ -5,51 +5,60 @@
              NavigationPage.HasNavigationBar="False">
     <AbsoluteLayout>
         <StackLayout Padding="25,25">
-            <Frame Margin="0, -150, 0, 0" HeightRequest="380" Padding="0, 0"  BackgroundColor="{StaticResource colorPrimary}" CornerRadius="150">
-                <Frame Padding="0" HeightRequest="250" WidthRequest="250" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" x:Name="ChangeUserImage"  VerticalOptions="End">
-                    <Image Source="https://i.ibb.co/tzqnRTG/camera.png" x:Name="UserImage" Scale="1.5"></Image>
-                </Frame>
+
+            <Frame Padding="0" HeightRequest="250" WidthRequest="250" CornerRadius="200" HorizontalOptions="Center" IsClippedToBounds="True" x:Name="ChangeUserImage"  VerticalOptions="End">
+                <Image Source="foto.png" x:Name="UserImage" Scale="0.7"></Image>
             </Frame>
-            <StackLayout Spacing="25" Margin="0,30,0,0">
-                <Entry Placeholder="Nombre completo" TextColor="#000" x:Name="UserNameText"></Entry>
-                <Entry Placeholder="Telefono" Keyboard="Numeric" TextColor="#000" x:Name="UserPhoneText"></Entry>
-                <Entry Placeholder="Correo" TextColor="#000" x:Name="UserEmailText" IsReadOnly="True"></Entry>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Picker Title="Genero" FontSize="18" TextColor="#000" x:Name="GenderPicker" WidthRequest="250">
-                        <Picker.Items>
-                            <x:String>Hombre</x:String>
-                            <x:String>Mujer</x:String>
-                            <x:String>Prefiero no decirlo</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Entry Placeholder="Edad" Keyboard="Numeric" TextColor="#000" x:Name="UserAgeText"></Entry>
-                </StackLayout>
+            <StackLayout Spacing="10" Margin="0,30,0,0">
+                <Entry Placeholder="Nombre completo" PlaceholderColor="Black" FontAttributes="Bold" TextColor="#000" x:Name="UserNameText"></Entry>
+                <Entry Placeholder="Telefono" PlaceholderColor="Black" FontAttributes="Bold" Keyboard="Numeric" TextColor="#000" x:Name="UserPhoneText"></Entry>
+                <Entry Placeholder="Correo" PlaceholderColor="Black" FontAttributes="Bold" TextColor="#000" x:Name="UserEmailText" IsReadOnly="True"></Entry>
+
+
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <StackLayout>
-                        <Entry Placeholder="Ubicación" TextColor="#000" x:Name="UserLocationText" IsReadOnly="True" WidthRequest="250"></Entry>
-                        <Label Text="Latitud" FontSize="8" x:Name="LatitudeCord"></Label>
-                        <Label Text="Longitud" FontSize="8" x:Name="LongitudeCord"></Label>
+                        <Entry Placeholder="Ubicación" PlaceholderColor="Black" FontAttributes="Bold" TextColor="#000" x:Name="UserLocationText" IsReadOnly="True" WidthRequest="250"></Entry>
+                        <Label Text="Latitud" TextColor="{StaticResource colorFont}" FontSize="8" x:Name="LatitudeCord"></Label>
+                        <Label Text="Longitud" TextColor="{StaticResource colorFont}" FontSize="8" x:Name="LongitudeCord"></Label>
                     </StackLayout>
-                    <Image Source="https://i.ibb.co/gV8hNCt/Find.png" Scale="0.6" x:Name="GetLocationButton" WidthRequest="65"></Image>
+                    <Image Source="mapa.png" Scale="0.6" x:Name="GetLocationButton" WidthRequest="65"></Image>
                 </StackLayout>
+
             </StackLayout>
             <StackLayout Margin="0,30,0,0" Spacing="20">
-                <Button Text="Actualizar" CornerRadius="15" Padding="10,10" BackgroundColor="#25B90A" TextColor="{StaticResource colorFont}" x:Name="UpdateButton" Clicked="UpdateButton_Clicked"></Button>
-                <Button Text="Cancelar" CornerRadius="15" BackgroundColor="#EE2B08" TextColor="{StaticResource colorFont}" x:Name="CancelButton" Clicked="CancelButton_Clicked"></Button>
+                <Button Text="Actualizar" CornerRadius="15" FontAttributes="Bold" Padding="10,10" BackgroundColor="Black" TextColor="{StaticResource colorFont}" x:Name="UpdateButton" Clicked="UpdateButton_Clicked"></Button>
+                <Button Text="Cancelar" CornerRadius="15" FontAttributes="Bold" BackgroundColor="Black" TextColor="{StaticResource colorFont}" x:Name="CancelButton" Clicked="CancelButton_Clicked"></Button>
+            </StackLayout>
+
+            <Label></Label>
+            <Label></Label>
+            <Label></Label>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Picker Title="Genero" FontSize="18" TextColor="#000" x:Name="GenderPicker" WidthRequest="250">
+                    <Picker.Items>
+                        <x:String>Hombre</x:String>
+                        <x:String>Mujer</x:String>
+                        <x:String>Prefiero no decirlo</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry Placeholder="" Keyboard="Numeric" TextColor="#000" x:Name="UserAgeText"></Entry>
             </StackLayout>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="0.5, 0.5, 350, 600"  AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="15" x:Name="PopUpModal">
+
+        <Frame AbsoluteLayout.LayoutBounds="1, 0, 360, 750"  AbsoluteLayout.LayoutFlags="PositionProportional" CornerRadius="0" x:Name="PopUpModal">
             <ScrollView>
                 <AbsoluteLayout>
-                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
-                    <Label Text="Se establecera esta ubicación como determinada" AbsoluteLayout.LayoutBounds="0.1, 0.15, 300,80" TextColor="#000" FontSize="18" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
-                    <Label Text="Ubicación nueva:" AbsoluteLayout.LayoutBounds="0.1, 0.5, 200,200" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="#000"></Label>
-                    <Label Text="NewLocation" x:Name="NewLocation" AbsoluteLayout.LayoutBounds="0.1, 0.58, 300,200" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.93, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
-                        <Button Text="Actualizar Ubicación" BackgroundColor="{StaticResource colorPrimary}" TextColor="{StaticResource colorFont}" CornerRadius="20" HorizontalOptions="CenterAndExpand" x:Name="NewLocationButton" Clicked="NewLocationButton_Clicked" FontSize="14"></Button>
+                    <Image Source="regresar.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
+                    <Label Text="Esta ubicacion sera la determinada" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0.1, 0.2, 300,80" TextColor="#000" FontSize="18" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                    <Label Text="" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0.1, 0.5, 300,200" AbsoluteLayout.LayoutFlags="PositionProportional" TextColor="#000"></Label>
+                    <Label Text="Nueva localizacion" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#000" x:Name="NewLocation" AbsoluteLayout.LayoutBounds="0.1, 0.38, 300,200" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.65, 190,100" AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Button Text="Actualizar Ubicación" BackgroundColor="Black" TextColor="{StaticResource colorFont}" CornerRadius="10" HorizontalOptions="CenterAndExpand" x:Name="NewLocationButton" Clicked="NewLocationButton_Clicked" FontSize="14"></Button>
                     </StackLayout>
                 </AbsoluteLayout>
             </ScrollView>
         </Frame>
+
     </AbsoluteLayout>
 </ContentPage>

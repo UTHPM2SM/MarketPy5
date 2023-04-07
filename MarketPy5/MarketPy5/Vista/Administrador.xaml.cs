@@ -27,7 +27,7 @@ namespace MarketPy5.Vista
             GetProfileInformationAndRefreshToken();
             ProductButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel()));
             UserButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToUsersPanel()));
-
+            HistoriaButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToHistoryPanel()));
             MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
             ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
 
@@ -67,7 +67,10 @@ namespace MarketPy5.Vista
         {
             Navigation.PushAsync(new FormularioUsuario());
         }
-
+        private void ToHistoryPanel()
+        {
+            Navigation.PushAsync(new PaginaHistoriaTotal());
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
 

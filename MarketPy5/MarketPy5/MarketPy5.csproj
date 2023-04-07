@@ -40,6 +40,9 @@
     <EmbeddedResource Update="Vista\Repartidor.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Vista\VistaAdministrador\PaginaHistoriaTotal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Vista\VistaAdministrador\PanelAgregarProducto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

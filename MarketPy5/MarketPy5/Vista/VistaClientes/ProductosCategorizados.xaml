@@ -4,7 +4,7 @@
              x:Class="MarketPy5.Vista.VistaClientes.ProductosCategorizados">
     <AbsoluteLayout>
         <StackLayout Padding="0, 0" BackgroundColor="{StaticResource colorPrimary}">
-            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="0">
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -20,31 +20,32 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Frame CornerRadius="5" Padding="5,5" HeightRequest="25">
-                            <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" FontSize="12" Placeholder="Buscar..." x:Name="SearchBar" TextChanged="SearchBar_TextChanged"></SearchBar>
+                        <Frame CornerRadius="5" Padding="5,5" HeightRequest="25"  BackgroundColor="{StaticResource colorPrimaryDark}">
+                            <SearchBar Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="10" TextColor="Black" FontSize="12" Placeholder="" x:Name="SearchBar" TextChanged="SearchBar_TextChanged"></SearchBar>
                         </Frame>
                         <ListView Grid.Row="3" x:Name="ProductListView" ItemsSource="{Binding Products}" HasUnevenRows="True" IsRefreshing="True" IsPullToRefreshEnabled="True" ItemTapped="ProductListView_ItemTapped" HeightRequest="730">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <SwipeView>
-                                            <StackLayout Margin="0, 10">
-                                                <Frame BorderColor="{StaticResource colorShadows}" CornerRadius="15">
+                                            <StackLayout Margin="0, 0">
+                                                <Frame BackgroundColor="{StaticResource colorPrimaryDark}" BorderColor="{StaticResource colorShadows}" CornerRadius="15">
                                                     <StackLayout  Orientation="Horizontal" Padding="0" Spacing="15">
-                                                        <Frame Padding="0" HeightRequest="100" WidthRequest="100" BackgroundColor="#ffffff" CornerRadius="100" BorderColor="{StaticResource colorAccent}" IsClippedToBounds="True">
+                                                        <Frame Padding="0" HeightRequest="0" WidthRequest="75" BackgroundColor="#ffffff" CornerRadius="10" BorderColor="{StaticResource colorAccent}" IsClippedToBounds="True">
                                                             <Frame.Content>
                                                                 <Image Source="{Binding Image}" Aspect="Fill"/>
                                                             </Frame.Content>
                                                         </Frame>
 
-                                                        <StackLayout HorizontalOptions="StartAndExpand">
-                                                            <Label Text="{Binding Name}" FontSize="12" FontAttributes="Bold"/>
-                                                            <Label Text="{Binding Description}" FontSize="9" LineBreakMode="TailTruncation"/>
+                                                        <StackLayout HorizontalOptions="CenterAndExpand" Margin="1,5,25,-15">
+                                                            <Label Text="{Binding Name}" FontSize="12" TextColor="Black" FontAttributes="Bold"/>
+
                                                             <StackLayout Orientation="Horizontal">
-                                                                <Label Text="{Binding Price}" FontSize="12"/>
-                                                                <Label Text="Lps" FontSize="11"/>
+                                                                <Label Text="{Binding Price}" TextColor="Black" FontAttributes="Bold" FontSize="12"/>
+                                                                <Label Text="Lps" FontSize="11" TextColor="Black"  FontAttributes="Bold"/>
                                                             </StackLayout>
-                                                            <Label Text="{Binding Category}" FontSize="12"/>
+                                                            <Label Text="{Binding Category}" TextColor="Black" FontAttributes="Bold" FontSize="12"/>
+                                                            <Label Text="{Binding Description}" FontSize="9" TextColor="{StaticResource colorPrimaryDark}" FontAttributes="Bold" LineBreakMode="TailTruncation"/>
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </Frame>
@@ -58,45 +59,38 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="0,-10, 350, 700" CornerRadius="15" x:Name="PopUpModal">
+        <Frame AbsoluteLayout.LayoutBounds="1, 0.3, 363, 700" CornerRadius="0" x:Name="PopUpModal">
             <ScrollView>
                 <ContentView>
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Image Source="https://i.ibb.co/dDnmXYB/close.png" HeightRequest="22" x:Name="ClosePopUpModal"></Image>
-                            <Label x:Name="ProductDetailName" Text="NoProductNameFound" FontSize="16" HorizontalOptions="StartAndExpand" TextColor="{StaticResource colorBlack}"></Label>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Image Source="regresar.png" HeightRequest="32" x:Name="ClosePopUpModal"></Image>
+                            <Label TextColor="White" x:Name="ProductDetailName" Text="NoProductNameFound" FontSize="16" HorizontalOptions="StartAndExpand"></Label>
                         </StackLayout>
-                        <Frame Padding="0" HeightRequest="200" WidthRequest="400" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0,15,0,0" BackgroundColor="{StaticResource colorBackImage}">
+                        <Frame Padding="0" HeightRequest="300" WidthRequest="300" CornerRadius="200" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0,15,0,0" BackgroundColor="{StaticResource colorBackImage}">
                             <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="ProductDetailImage"></Image>
                         </Frame>
                         <StackLayout>
-                            <Label x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" FontSize="8"></Label>
+                            <Label TextColor="White" x:Name="ProductDetailId" Text="ID" HorizontalOptions="CenterAndExpand" FontSize="8"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Vertical" Spacing="1" Margin="0,20,0,0">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="15">
-                                <Button Text="-" x:Name="Drop" Clicked="Drop_Clicked" WidthRequest="45" CornerRadius="50"></Button>
-                                <Label Text="1" x:Name="PoundAndUnityText" VerticalOptions="CenterAndExpand"></Label>
-                                <Button Text="+" x:Name="Add" Clicked="Add_Clicked" WidthRequest="45" CornerRadius="50"></Button>
+                                <Button BorderColor="Black" BackgroundColor="{StaticResource colorPrimary}" Text="Quitar" x:Name="Drop" Clicked="Drop_Clicked" WidthRequest="75" CornerRadius="10"></Button>
+                                <Label TextColor="Black" Text="1" x:Name="PoundAndUnityText" VerticalOptions="CenterAndExpand"></Label>
+                                <Button BorderColor="Black" BackgroundColor="{StaticResource colorPrimary}" Text="Añadir" x:Name="Add" Clicked="Add_Clicked" WidthRequest="75" CornerRadius="10"></Button>
                             </StackLayout>
-                            <Label Text="Lbs/U" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <Label Text="" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Label x:Name="ProductDetailPrice" Text="00.00" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="19" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
-                                <Label Text="Lps" HorizontalOptions="Start" VerticalOptions="EndAndExpand" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource colorPrimary}"></Label>
+                                <Label x:Name="ProductDetailPrice" Text="00.00" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="19" FontAttributes="Bold" TextColor="Black"></Label>
+                                <Label Text="Lps" HorizontalOptions="Start" VerticalOptions="EndAndExpand" FontSize="12" FontAttributes="Bold" TextColor="Black"></Label>
                             </StackLayout>
 
-                            <StackLayout Orientation="Horizontal" Spacing="1" Margin="0,30,0,0">
-                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                                <Image Source="https://i.ibb.co/1K1JgT6/star-full.png" WidthRequest="30"></Image>
-                                <Image Source="https://i.ibb.co/R3YVH2c/star-empty.png" WidthRequest="30"></Image>
-                            </StackLayout>
                         </StackLayout>
-                        <Label x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,50,0,0"></Label>
-                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30" Margin="0,50, 0, 70">
-                            <Button Text="Agregar a carrito" x:Name="BuyButton" BackgroundColor="#25B90A" CornerRadius="5" FontSize="12" Clicked="BuyButton_Clicked"></Button>
-                            <Image Source="https://i.ibb.co/NtJjv5z/like.png" Scale="3" WidthRequest="15" x:Name="LikeButton"></Image>
+                        <Label TextColor="White" x:Name="ProductDetailDescription" Text="NoDescriptionFound" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"></Label>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20" Margin="10,50,-20,50">
+                            <Button Text="Poner en el carrito de pedidos" x:Name="BuyButton" TextColor="White" FontAttributes="Bold" BackgroundColor="Black" CornerRadius="5" FontSize="12" Clicked="BuyButton_Clicked"></Button>
+                            <Image Source="" Scale="3" WidthRequest="15" x:Name="LikeButton"></Image>
                         </StackLayout>
                     </StackLayout>
                 </ContentView>

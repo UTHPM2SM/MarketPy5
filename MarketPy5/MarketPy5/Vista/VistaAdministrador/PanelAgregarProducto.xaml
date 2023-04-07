@@ -4,21 +4,21 @@
              x:Class="MarketPy5.Vista.VistaAdministrador.PanelAgregarProducto">
     <AbsoluteLayout>
         <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0.02,200,200" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="AddProductImage">
-            <Image Source="https://i.ibb.co/tzqnRTG/camera.png" x:Name="ProductImage"></Image>
+            <Image Source="foto.png" Scale="0.7" x:Name="ProductImage"></Image>
         </Frame>
-        <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.75,300,500" AbsoluteLayout.LayoutFlags="PositionProportional" Spacing="25">
-            <Entry Placeholder="Nombre del producto" TextColor="#000" x:Name="NameProductText"></Entry>
-            <Entry Placeholder="Precio" Keyboard="Numeric" TextColor="#000" x:Name="PriceProductText"></Entry>
-            <Entry Placeholder="Descripción" TextColor="#000" x:Name="DescriptionProductText"></Entry>
-            <Picker Title="Categoria" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5,1.3,300,500" AbsoluteLayout.LayoutFlags="PositionProportional" Spacing="25">
+            <Entry Placeholder="Producto" PlaceholderColor="Black" FontAttributes="Bold" TextColor="#000" x:Name="NameProductText"></Entry>
+            <Entry Placeholder="Precio" PlaceholderColor="Black" FontAttributes="Bold" Keyboard="Numeric" TextColor="#000" x:Name="PriceProductText"></Entry>
+            <Picker Title="Tipo de producto" TitleColor="Black" FontAttributes="Bold" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
                 <Picker.Items>
-                    <x:String>Bebidas</x:String>
-                    <x:String>Carnes</x:String>
+                    <x:String>Cervezas</x:String>
                     <x:String>Bebes</x:String>
-                    <x:String>Verduras</x:String>
+                    <x:String>Leches</x:String>
+                    <x:String>Carnes</x:String>
                 </Picker.Items>
             </Picker>
+            <Entry Placeholder="Descripción" PlaceholderColor="Black" FontAttributes="Bold" TextColor="#000" x:Name="DescriptionProductText"></Entry>
         </StackLayout>
-        <Button AbsoluteLayout.LayoutBounds="0.5, 0.9, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Agregar Producto" CornerRadius="15" BackgroundColor="{StaticResource colorPrimaryDark}" TextColor="{StaticResource colorFont}" Clicked="Button_Clicked"></Button>
+        <Button AbsoluteLayout.LayoutBounds="0.5, 0.85, 250, 60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Agregar Producto" CornerRadius="10" BackgroundColor="Black" TextColor="{StaticResource colorFont}" Clicked="Button_Clicked"></Button>
     </AbsoluteLayout>
-    </ContentPage>
+</ContentPage>

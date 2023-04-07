@@ -1,17 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarketPy5.Vista.Repartidor"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="MarketPy5.Vista.Repartidor">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Repartidor"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+
     <AbsoluteLayout  AbsoluteLayout.LayoutFlags="PositionProportional">
         <StackLayout Padding="0" Spacing="0">
-            <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
-                <Image Source="https://i.ibb.co/0m4SnTC/Hamburger-Menu.png" x:Name="MenuButton" Scale="0.8" HorizontalOptions="End"></Image>
+            <Frame HeightRequest="40" Padding="15, 15" BackgroundColor="Black">
+                <Image Source="eleccion.png" x:Name="MenuButton" Scale="1.0" HorizontalOptions="Start"></Image>
             </Frame>
             <StackLayout Padding="15, 15" BackgroundColor="{StaticResource colorPrimary}">
-                <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="15">
+                <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="5">
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Compras Pendientes" TextColor="{StaticResource colorBlack}" FontSize="18" HorizontalOptions="CenterAndExpand"></Label>
+                        <Frame BackgroundColor="Black" Padding="0,15" CornerRadius="5" Margin="0,0,0,-5">
+                            <Label Text="Pedidos Pendientes" TextColor="White" FontAttributes="Bold" FontSize="18" HorizontalOptions="CenterAndExpand"></Label>
+                        </Frame>
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -28,39 +37,42 @@
                                         <ViewCell>
                                             <SwipeView>
                                                 <StackLayout Margin="0, 10">
-                                                    <Frame BorderColor="{StaticResource colorPrimaryDark}" CornerRadius="5">
+                                                    <Frame BackgroundColor="{StaticResource colorPrimary}" BorderColor="{StaticResource colorPrimaryDark}" CornerRadius="5">
                                                         <StackLayout  Orientation="Vertical" Padding="0" Spacing="15">
                                                             <StackLayout HorizontalOptions="StartAndExpand">
-                                                                <Frame BackgroundColor="{StaticResource colorPrimary}" Padding="5,5" CornerRadius="15" Margin="0,0,0,20">
-                                                                    <Label Text="Detalles de compra" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorFont}" FontAttributes="Bold"></Label>
+                                                                <Frame BackgroundColor="Black" Padding="15,15" CornerRadius="10" Margin="0,0,0,20">
+                                                                    <Label Text="Pedidos" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorFont}" FontAttributes="Bold"></Label>
                                                                 </Frame>
-                                                                <Label Text="{Binding Id}" FontSize="10" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource colorBlack}"></Label>
+                                                                <Label Text="{Binding Id}" TextColor="{StaticResource colorPrimaryDark}" FontSize="10" HorizontalOptions="CenterAndExpand" ></Label>
                                                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                                                    <Label Text="Cliente:" FontSize="12"></Label>
-                                                                    <Label Text="{Binding ClientName}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                                    <Label Text="Cliente:" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                                                    <Label Text="{Binding ClientName}" TextColor="{StaticResource colorBlack}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
                                                                 </StackLayout>
+
                                                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                                                    <Label Text="Fecha de compra:" FontSize="12"></Label>
-                                                                    <Label Text="{Binding Date}" FontSize="12" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
+                                                                    <Label Text="Telefono del cliente: " TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                                                    <Label Text="{Binding ClientPhone}" TextColor="{StaticResource colorBlack}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
                                                                 </StackLayout>
+
                                                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                                                    <Label Text="Telefono referencia: " FontSize="12"></Label>
-                                                                    <Label Text="{Binding ClientPhone}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                                    <Label Text="Dirección referencia: " TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                                                    <Label Text="{Binding Detail}" TextColor="{StaticResource colorBlack}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
                                                                 </StackLayout>
+
                                                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                                                    <Label Text="Total cancelar: " FontSize="12"></Label>
-                                                                    <Label Text="{Binding TotalToPay}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                                                    <Label Text="Total cancelar: " TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                                                    <Label Text="{Binding TotalToPay}" TextColor="{StaticResource colorBlack}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
                                                                 </StackLayout>
+
                                                                 <StackLayout Orientation="Horizontal" Spacing="20">
-                                                                    <Label Text="Dirección referencia: " FontSize="12"></Label>
-                                                                    <Label Text="{Binding Detail}" FontSize="12" FontAttributes="Bold" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
+                                                                    <Label Text="Fecha de pedido:" TextColor="{StaticResource colorBlack}" FontSize="12"></Label>
+                                                                    <Label Text="{Binding Date}" TextColor="{StaticResource colorBlack}" FontSize="12" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" LineBreakMode="TailTruncation"/>
                                                                 </StackLayout>
+
+
                                                                 <Label Text="{Binding State}" TextColor="{StaticResource colorPrimaryDark}"></Label>
                                                             </StackLayout>
-                                                            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="End" Orientation="Horizontal">
-                                                                <Label Text="Supermercado El Economico" FontSize="8" VerticalOptions="Center"></Label>
-                                                                <Image Source="https://i.ibb.co/vYjdFMX/Economico-Logo.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="40" HorizontalOptions="EndAndExpand" Scale="0.5"></Image>
-                                                            </StackLayout>
+
                                                         </StackLayout>
                                                     </Frame>
                                                 </StackLayout>
@@ -74,19 +86,19 @@
                 </Frame>
             </StackLayout>
         </StackLayout>
-        <Frame AbsoluteLayout.LayoutBounds="31, 150, 350, 600" CornerRadius="15" x:Name="PopUpModal">
+        <Frame AbsoluteLayout.LayoutBounds="0,0, 395, 780" CornerRadius="0" x:Name="PopUpModal">
             <ScrollView>
                 <AbsoluteLayout>
-                    <Image Source="https://i.ibb.co/dDnmXYB/close.png" Scale="0.6" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
-                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="100" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.5,0,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Image Source="regresar.png" Scale="0.8" AbsoluteLayout.LayoutBounds="0, 0, 35,35" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="ClosePopUpModal"></Image>
+                    <Frame Padding="0" HeightRequest="200" WidthRequest="200" CornerRadius="10" HorizontalOptions="Center" IsClippedToBounds="True" AbsoluteLayout.LayoutBounds="0.4,0.1,200,200" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Image Source="https://i.ibb.co/vhh0Gkj/users.png" x:Name="UserImage" Scale="1.5"></Image>
                     </Frame>
-                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.4, 300,50" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.4, 0.5, 200,150" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Label x:Name="UserName" Text="NoUserFounded" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="{StaticResource colorBlack}"></Label>
                         <Label x:Name="UserEmail" Text="NoEmailFounded" HorizontalOptions="CenterAndExpand"></Label>
-                        <Label x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label TextColor="White" x:Name="UserPhone" Text="00000000" HorizontalOptions="CenterAndExpand"></Label>
                     </StackLayout>
-                    <Button Text="LogOut" Command="{Binding LogOutCommand}" BackgroundColor="{StaticResource colorPrimary}" CornerRadius="20" AbsoluteLayout.LayoutBounds="0.5, 1, 100,50" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+                    <Button Text="Cerrar Sesión" Command="{Binding LogOutCommand}" TextColor="White" FontAttributes="Bold" BackgroundColor="Black" CornerRadius="10" AbsoluteLayout.LayoutBounds="0.4, 0.65, 160,65" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
                 </AbsoluteLayout>
             </ScrollView>
         </Frame>

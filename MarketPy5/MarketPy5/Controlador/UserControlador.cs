@@ -92,12 +92,20 @@ namespace MarketPy5.Controlador
         }
 
         //Verificacion del email
-        public async void EmailVerification(string email)
+        public async Task ValidarCuentaRegistro(string email, string password)
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebApiKey));
-            await authProvider.SendEmailVerificationAsync(email);
+            var auth = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
+            string gettoken = auth.FirebaseToken;
+            var content = await auth.GetFreshAuthAsync();
+            var serializartoken = JsonConvert.SerializeObject(auth);
+            Preferences.Set("MyFirebaseRefreshToken", serializartoken);
+            Preferences.Set("MyToken", gettoken);
 
-            await Application.Current.MainPage.DisplayAlert("Verificación", "Se ha enviado a " + email + " un correo de verificación", "OK");
+            if (content.User.IsEmailVerified == false)
+            {
+                await authProvider.SendEmailVerificationAsync(gettoken);
+            }
         }
 
         //Actualizar usuario
@@ -129,11 +137,25 @@ namespace MarketPy5.Controlador
                 Preferences.Set("Longitude", user.Longitude);
                 Preferences.Set("Age", user.Age);
 
-                if (user.Level == "C")
+              
+                string gettoken = auth.FirebaseToken;
+                var contenido = await auth.GetFreshAuthAsync();
+                var serializartoken = JsonConvert.SerializeObject(auth);
+                Preferences.Set("MyFirebaseRefreshToken", serializartoken);
+                Preferences.Set("MyToken", gettoken);
+
+
+                if (contenido.User.IsEmailVerified == false)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Advertencia", "Debe verificar su correo electrónico, le hemos enviado nuevamente el correo para verficarlo.", "OK");
+                    await authProvider.SendEmailVerificationAsync(gettoken);
+                     
+                }
+                 else if (user.Level == "C")
                 {
                     await Application.Current.MainPage.Navigation.PushAsync(new PaginaInicio());
                 }
-                else if (user.Level == "D")
+                else if (user.Level == "R")
                 {
                     await Application.Current.MainPage.Navigation.PushAsync(new Repartidor());
                 }
@@ -148,7 +170,7 @@ namespace MarketPy5.Controlador
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", ex.Source, "OK");
+                await Application.Current.MainPage.DisplayAlert("Fallo de sesión", "Correo o contraseña incorrectas.", "OK");
             }
         }
 
@@ -175,6 +197,7 @@ namespace MarketPy5.Controlador
                         string gettoken = auth.FirebaseToken;
                         await AddUser(name, email, phone);
                         Login(email, password);
+                        await ValidarCuentaRegistro(email, password);
                     }
                     catch (Exception ex)
                     {

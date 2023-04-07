@@ -30,10 +30,10 @@ namespace MarketPy5.Vista
             MenuButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => OpenModal()));
             ClosePopUpModal.GestureRecognizers.Add(new TapGestureRecognizer((view) => CloseModal()));
 
-            MeatCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Carnes")));
-            VegetablesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Verduras")));
-            DrinksCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebidas")));
-            BabiesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebes")));
+            CervezaCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Cervezas")));
+            BebesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Bebes")));
+            LecheCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Leches")));
+            CarnesCategory.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToProductsPanel("Carnes")));
 
             ToHistoryPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToHistoryPage()));
             ToInfoPageButton.GestureRecognizers.Add(new TapGestureRecognizer((view) => ToInfoPage()));

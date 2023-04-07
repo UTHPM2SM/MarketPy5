@@ -71,7 +71,7 @@ namespace MarketPy5.Vista.VistaClientes
             }
             catch (Exception ex)
             {
-                await DisplayAlert("No ubicacionb", ex.Message, "OK");
+                await DisplayAlert("No ubicacion", ex.Message, "OK");
             }
         }
 

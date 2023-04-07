@@ -40,6 +40,28 @@ namespace MarketPy5.Controlador
         //==============================================================================
 
         //==============================================================================
+
+        public static async Task<List<Ventas>> GetHistory()
+        {
+            return (await firebase.Child("Sales").OnceAsync<Ventas>()).Select(item => new Ventas
+            {
+                Id = item.Key,
+                ClientName = item.Object.ClientName,
+                ClientMail = item.Object.ClientMail,
+                ClientPhone = item.Object.ClientPhone,
+                ClientLatitude = item.Object.ClientLatitude,
+                ClientLongitude = item.Object.ClientLongitude,
+                TotalToPay = item.Object.TotalToPay,
+                Detail = item.Object.Detail,
+                Date = item.Object.Date,
+                PayFormat = item.Object.PayFormat,
+                ShoppingCar = item.Object.ShoppingCar,
+                State = item.Object.State
+            }).ToList();
+        }
+
+
+
         public static async Task<List<Ventas>> GetUserHistory(string email)
         {
             return (await firebase.Child("Sales").OnceAsync<Ventas>()).Select(item => new Ventas
