@@ -13,7 +13,7 @@
             <Entry Placeholder="Descripción" FontAttributes="Bold" PlaceholderColor="Black" TextColor="#000" x:Name="DescriptionProductText"></Entry>
             <Picker Title="Tipo de producto" FontAttributes="Bold" TitleColor="Black" FontSize="18" TextColor="#000" x:Name="CategoryPicker">
                 <Picker.Items>
-                    <x:String>Cerveza</x:String>
+                    <x:String>Cervezas</x:String>
                     <x:String>Bebes</x:String>
                     <x:String>Leches</x:String>
                     <x:String>Carnes</x:String>

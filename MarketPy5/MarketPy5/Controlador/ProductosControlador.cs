@@ -110,7 +110,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<bool> DeleteProduct(string id)
         {
-            await firebaseClient.Child(nameof(Productos) + "/" + id).DeleteAsync();
+            await firebaseClient.Child("Products" + id).DeleteAsync();
             return true;
         }
 
@@ -119,7 +119,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<bool> UpdateProduct(Productos product)
         {
-            await firebaseClient.Child(nameof(Productos) + "/" + product.Id).PutAsync(JsonConvert.SerializeObject(product));
+            await firebaseClient.Child("Products" + "/" + product.Id).PutAsync(JsonConvert.SerializeObject(product));
             return true;
         }
 
