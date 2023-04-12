@@ -110,7 +110,7 @@ namespace MarketPy5.Controlador
         //==============================================================================
         public static async Task<bool> DeleteProduct(string id)
         {
-            await firebaseClient.Child("Products" + id).DeleteAsync();
+            await firebaseClient.Child("Products" + "/" + id).DeleteAsync();
             return true;
         }
 

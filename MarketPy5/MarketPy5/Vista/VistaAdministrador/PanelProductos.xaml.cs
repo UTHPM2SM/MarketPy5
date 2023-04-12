@@ -60,7 +60,7 @@ namespace MarketPy5.Vista.VistaAdministrador
             PopUpModal.IsVisible = false;
         }
 
-        private async void DeleteProduct()
+        private async void BorrarProducto()
         {
             String id = ProductDetailId.Text;
             bool res = await ProductosControlador.DeleteProduct(id);
@@ -84,7 +84,7 @@ namespace MarketPy5.Vista.VistaAdministrador
 
         private void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            DeleteProduct();
+            BorrarProducto();
         }
 
         private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)

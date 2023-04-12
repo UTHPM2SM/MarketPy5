@@ -84,6 +84,8 @@
                     </StackLayout>
                     <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.73, 250,50" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Vertical" Margin="10,10,10,10">
                         <Button Text="Actualizar" x:Name="UpdateButton" Clicked="UpdateButton_Clicked" BackgroundColor="Black" TextColor="#fff" CornerRadius="10"></Button>
+                    </StackLayout>
+                    <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.83, 250,50" AbsoluteLayout.LayoutFlags="PositionProportional" Orientation="Vertical" Margin="10,10,10,10">
                         <Button Text="Eliminar" x:Name="DeleteButton" Clicked="DeleteButton_Clicked" BackgroundColor="Black" CornerRadius="10" TextColor="#fff"></Button>
                     </StackLayout>
                 </AbsoluteLayout>
